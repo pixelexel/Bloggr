@@ -25,7 +25,7 @@ SECRET_KEY = 'o9^ni+nd1cmxogud1ziyp770q^x=s4uu4qw&sc(f2+2jl)5*_0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pixelexel.pythonanywhere.com']
 
 
 # Application definition
