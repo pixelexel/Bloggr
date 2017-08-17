@@ -21,7 +21,7 @@
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="{% static 'css/bloggr.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bloggr.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -62,10 +62,10 @@
                         <a href="{% url 'about' %}">About</a>
                     </li>
                     <li>
-                        <a href="post.html">Sample Post</a>
+                        <a href="{% url 'post_new' %}">New Post</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="{% url 'contact' %}">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/pixelexel/Bloggr">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>

@@ -406,3 +406,7 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
