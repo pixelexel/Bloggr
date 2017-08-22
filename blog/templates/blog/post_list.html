@@ -27,12 +27,12 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-preview">
                     <h2 class="post-title">
-                      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> 
+                      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                     </h2>
                     <h3 class="post-subtitle">
                       {{post.subtitle}}
                     </h3>
-                    <p class="post-meta">Posted by <a href="#">User</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
+                    <p class="post-meta">Posted by <a href="#">{{user}}</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
               </div>
           </div>
           <hr>

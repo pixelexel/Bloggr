@@ -1,0 +1,14 @@
+#libraries used
+
+social-auth-app-django
+
+#Sign-in
+
+Add stuff from social-auth page
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ‘’
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+LOGIN_REDIRECT_URL = '/#'
+<a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
+
+Profile is added to users
+Access name using {{user.first_name}}
