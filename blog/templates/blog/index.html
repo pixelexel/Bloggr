@@ -13,8 +13,11 @@
                   <div class="site-heading">
                       <h1>Bloggr</h1>
                       <hr class="small">
-                      <span class="subheading">Write your first blog here!</span>
-                      <div class="g-signin2 btn pull-center" data-onsuccess="onSignIn">Button</div>
+                      <span class="subheading">Write your first blog here{% if user.is_authenticated %}, {{user.first_name}}! {% endif %}</span>
+                      <!-- <div class="g-signin2 btn pull-center" data-onsuccess="onSignIn">Button</div> -->
+                      <div class="g-signin2 btn pull-center" onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';>
+                        <!-- <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a> -->
+                      </div>
                   </div>
                </div>
             </div>
@@ -22,8 +25,24 @@
   </header>
 
   <!-- Main Content -->
-  <div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              {% for post in posts %}
+                <div class="post-preview">
+                      <h2 class="post-title">
+                        <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+                      </h2>
+                      <h3 class="post-subtitle">
+                        {{post.subtitle}}
+                      </h3>
+                      <p class="post-meta">Posted by <a href="#">{{user}}</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
+                </div>
+                <hr>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
 
-  </div>
 
 {% endblock %}
