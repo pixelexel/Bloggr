@@ -6,6 +6,9 @@
 {% block content %}
 
   <!-- Header  -->
+  <link href="{% static 'css/bootstrap-social.css' %}" rel="stylesheet">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="575631797778-8a2dg5s8aj5a5vqbd4vab87lvf3kfd61.apps.googleusercontent.com">
   <header class="intro-header" style="background-image: url('{% static "img/home-bg.jpg" %}')">
       <div class="container">
           <div class="row">
@@ -13,10 +16,11 @@
                   <div class="site-heading">
                       <h1>Bloggr</h1>
                       <hr class="small">
-                      <span class="subheading">Write your first blog here{% if user.is_authenticated %}, {{user.first_name}}! {% endif %}</span>
-                      <!-- <div class="g-signin2 btn pull-center" data-onsuccess="onSignIn">Button</div> -->
-                      <div class="g-signin2 btn pull-center" onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';>
-                        <!-- <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a> -->
+                      <span class="subheading" style = "padding : 10px" >Write your first blog here{% if user.is_authenticated %}, {{user.first_name}}! {% endif %}</span>
+                      <!-- <a class="btn btn-xs btn-social btn-google " href = '{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}'>
+                          Sign in with Google
+                      </a> -->
+                      <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div>
                       </div>
                   </div>
                </div>

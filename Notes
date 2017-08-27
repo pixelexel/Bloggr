@@ -12,3 +12,8 @@ LOGIN_REDIRECT_URL = '/#'
 
 Profile is added to users
 Access name using {{user.first_name}}
+
+
+
+—
+Sign button from https://lipis.github.io/bootstrap-social/
