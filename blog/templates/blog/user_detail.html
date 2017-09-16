@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Header  -->
+<header class="intro-header" style="background-image: url('{% static "img/post-bg.jpg" %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Write your next blog,{% if user.is_authenticated %}, {{user.first_name}}! {% endif %} </h1>
+                    <hr class="small">
+                    <span class="subheading">Write blog button</span>
+                </div>
+             </div>
+          </div>
+      </div>
+</header>
+
+
+<!-- Main Content -->
+
+{% for post in posts %}
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-preview">
+                    <h2 class="post-title">
+                      <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+                    </h2>
+                    <h3 class="post-subtitle">
+                      {{post.subtitle}}
+                    </h3>
+                    <p class="post-meta">Posted by <a href="#">User</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
+              </div>
+          </div>
+          <hr>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}

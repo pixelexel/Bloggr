@@ -37,3 +37,7 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post' : post})
+
+def user_detail(request, user):
+    posts = Post.objects.filter(published_date__lte = timezone.now(), author = user).order_by('published_date')
+    return render(request, 'blog/user_detail.html', {'posts' : posts})
