@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
-                        <li>
+                        <!-- <li>
                             <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -105,7 +105,7 @@
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="https://github.com/pixelexel/Bloggr">
                                 <span class="fa-stack fa-lg">
@@ -132,17 +132,6 @@
 
     <!-- Theme JavaScript -->
     <script src="{% static 'js/clean-blog.min.js' %}"></script>
-
-    <script>
-    function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-
-    </script>
 
 </body>
 
