@@ -39,5 +39,5 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post' : post})
 
 def user_detail(request, user):
-    posts = Post.objects.filter(published_date__lte = timezone.now(), author = user).order_by('published_date')
-    return render(request, 'blog/user_detail.html', {'posts' : posts})
+    posts = Post.objects.filter(published_date__lte = timezone.now(),  author__username = user).order_by('published_date') #To access foreign key relations use key__attribute # User is a string like author__username so only that can be compared!
+    return render(request, 'blog/user_detail.html', {'posts' : posts, 'username' : user})

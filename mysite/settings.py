@@ -83,7 +83,7 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '575631797778-8a2dg5s8aj5a5vqbd4vab87lvf3kfd61.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GuEWJwhrLQrKxBjDi77zqeSQ'
-LOGIN_REDIRECT_URL = '/#'
+LOGIN_REDIRECT_URL = '/post/new/'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
