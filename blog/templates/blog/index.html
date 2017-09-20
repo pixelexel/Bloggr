@@ -18,7 +18,7 @@
                       <hr class="small">
                       {% if user.is_authenticated %}
                         <span class="subheading" style = "padding : 10px" >Time to write your next post, {{user.first_name}}!</span>
-                        <a class= "btn btn-default"  href = '/post/new'>New Post!</a>
+                        <a class= "mui-btn mui-btn--raised mui-btn--accent"  href = '/post/new'>New Post!</a>
                       {% else %}
                         <span class="subheading" style = "padding : 10px" >Sign in to start blogging with us!</span>
                         <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div>
