@@ -1,6 +1,7 @@
 #libraries used
 
 social-auth-app-django
+flask for login_required
 
 #Sign-in
 

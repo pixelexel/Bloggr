@@ -33,6 +33,7 @@
                       {{post.subtitle}}
                     </h3>
                     <p class="post-meta">Posted by <a href="/user/{{post.author.username}}">{{post.author.username}}</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count  }}</a>
               </div>
           </div>
           <hr>

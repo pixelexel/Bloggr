@@ -405,3 +405,7 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
