@@ -1,18 +1,15 @@
 # Bloggr
 Bloggr - A full fledged Blogging platform for first time bloggers! [WIP]
 
-README.md [WIP]
-
-Bloggr is a full fledged Blogging platform with a beautiful UI and great mobile browser support.
-
-
+[WIP]
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 ### Prerequisites
 
-```
 Python Dependencies:
+
+```
 Django
 social-auth-app-django
 ```
