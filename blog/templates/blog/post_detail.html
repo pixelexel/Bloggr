@@ -31,7 +31,11 @@
 
     <hr>
 
-    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% if user.is_authenticated %}
+      <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% else %}
+      <a class="btn btn-default" href="http://localhost:8000/">Sign in at our home page to comment</a>
+    {% endif %}
 
   {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
