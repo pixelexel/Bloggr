@@ -9,9 +9,9 @@
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <div class="page-heading">
-                      <h1>New Post!</h1>
+                      <h1>Edit Post!</h1>
                       <hr class="small">
-                      <span class="subheading">What do you want to write about today?</span>
+                      <!-- <span class="subheading">What do you want to write about today?</span> -->
                   </div>
                </div>
             </div>
@@ -24,7 +24,7 @@
       <form method="POST" class = "post-form">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit" class="mui-btn mui-btn--raised mui-btn mui-btn--primary">Publish</button>
+        <button type="submit" class="save btn btn-default">Publish</button>
       </form>
   </div>
 

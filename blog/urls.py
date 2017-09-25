@@ -11,5 +11,6 @@ url(r'^post/(?P<pk>\d+)/$', views.post_detail, name = 'post_detail'),
 url(r'^user/(?P<user>[\w.]+)/$', views.user_detail, name = 'user_detail'),
 url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
 url(r'^comment/(?P<pk>\d+)/approve/$', views.comment_approve, name='comment_approve'),
-url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove')
+url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
+url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit')
 ]
