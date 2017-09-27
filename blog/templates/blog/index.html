@@ -20,8 +20,11 @@
                         <span class="subheading" style = "padding : 10px" >Time to write your next post, {{user.first_name}}!</span>
                         <a class= "mui-btn mui-btn--raised mui-btn"  href = '/post/new'>New Post!</a>
                       {% else %}
-                        <span class="subheading" style = "padding : 10px" >Sign In To Start Blogging With Us!</span>
+                        <span class="subheading" style = "padding : 10px" >Write your First Blog here!</span>
                         <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div>
+
+                        <a href="/signup" style="color:white;text-decoration:underline;">Sign up using your email address</a>
+
                         <!-- <a class="btn btn-xs btn-social btn-google " href = '{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}'>
                             Sign in with Google
                         </a> -->

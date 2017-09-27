@@ -3,8 +3,10 @@ from __future__ import unicode_literals
 from django.utils import timezone
 
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, SignUpForm
 from .models import Post, Comment
+#Sign Up
+from django.contrib.auth import login, authenticate
 
 # Create your views here.
 
@@ -80,3 +82,17 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'blog/signup.html', {'form': form})
