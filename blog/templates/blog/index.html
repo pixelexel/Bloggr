@@ -56,5 +56,23 @@
         </div>
       </div>
 
+      {% load link_list %}
+
+      {% get_link_list "blogroll" as links, category %}
+
+      {% if links %}
+          <div class="module">
+              <h3 class="title">{{ category.title }}</h3>
+              <ul>
+                  {% for link in links %}
+                      <li>
+                          <a href="{{ link.href }}"
+                              title="{{ link.description }}">{{ link.title }}</a>
+                      </li>
+                  {% endfor %}
+              </ul>
+          </div>
+      {% endif %}
+
 
 {% endblock %}
