@@ -23,7 +23,7 @@
                         <span class="subheading" style = "padding : 10px" >Write your First Blog here!</span>
                         <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div>
 
-                        <a href="/signup" style="color:white;text-decoration:underline;">Sign up using your email address</a>
+                        <a class= "mui-btn mui-btn--raised mui-btn--primary"  href="/signup">Sign up</a>
 
                         <!-- <a class="btn btn-xs btn-social btn-google " href = '{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}'>
                             Sign in with Google
