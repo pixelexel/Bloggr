@@ -1,5 +1,5 @@
 # Bloggr
-Bloggr - A full fledged Blogging platform for first time bloggers! [WIP]
+Bloggr - A Blogging platform for first time bloggers!
 
 [WIP]
 ## Getting Started
