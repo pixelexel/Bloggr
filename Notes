@@ -2,7 +2,7 @@
 
 social-auth-app-django
 django
-
+django-markdownx
 
 #Sign-in
 
