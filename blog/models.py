@@ -6,12 +6,13 @@ from django.db import models
 # Create your models here.
 
 from django.utils import timezone
+from markdownx.models import MarkdownxField
 
 class Post(models.Model):
     author = models.ForeignKey('auth.user')
     title = models.CharField(max_length = 200)
     subtitle = models.CharField(max_length = 200, default = '')
-    text = models.TextField()
+    text = MarkdownxField() #extends Django's TextField and stores in DB accordingly 
     created_date = models.DateTimeField(default = timezone.now)
     published_date = models.DateTimeField(blank = True, null = True)
 

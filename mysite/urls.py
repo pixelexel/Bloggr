@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'',include('blog.urls')),
     url('', include('social_django.urls', namespace='social')),
+    url(r'^markdownx/', include('markdownx.urls')),
 ]
