@@ -12,13 +12,15 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 LOGIN_REDIRECT_URL = '/#'
 <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
 
-Profile is added to users
-Access name using {{user.first_name}}
+#Markdown
+Install and configure as mentioned at django-markdownx
 
+In views:
+from markdownx.utils import markdownify
+post.text = markdownify(post.text)
 
-
-—
-Sign button from https://lipis.github.io/bootstrap-social/
+In post_detail template:
+{{post.text | safe}} to allow HTML tags to be rendered.
 
 
 #TO-DO

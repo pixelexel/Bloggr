@@ -7,6 +7,7 @@ from .forms import PostForm, CommentForm, SignUpForm
 from .models import Post, Comment
 #Sign Up
 from django.contrib.auth import login, authenticate
+from markdownx.utils import markdownify
 
 # Create your views here.
 
@@ -53,6 +54,7 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    post.text = markdownify(post.text)
     return render(request, 'blog/post_detail.html', {'post' : post})
 
 def user_detail(request, user):
