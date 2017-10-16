@@ -19,5 +19,6 @@ django-markdownx
 
 * Bootstrap theme from https://github.com/BlackrockDigital/startbootstrap-clean-blog
 * Material Design buttons from https://www.muicss.com/
+* Markdown Support from https://github.com/neutronX/django-markdownx
 * Guide from https://tutorial.djangogirls.org/en/
 * README.md template from https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md
