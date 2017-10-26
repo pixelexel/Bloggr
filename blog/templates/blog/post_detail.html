@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    {{post.text | safe}} 
+                    {{post.text | safe}}
                 </div>
             </div>
         </div>
@@ -35,23 +35,20 @@
     {% if user.is_authenticated %}
       <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
     {% else %}
-      <a class="btn btn-default" href="http://localhost:8000/">Sign in at our home page to comment</a>
+      <a class="btn btn-default" href="https://pixelexel.pythonanywhere.com/">Sign in to comment</a>
     {% endif %}
 
   {% for comment in post.comments.all %}
-    {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
         <div class="date">
             {{ comment.created_date }}
-            {% if not comment.approved_comment %}
+            {% if user == post.auther or user.is_staff %}
                 <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
             {% endif %}
         </div>
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text|linebreaks }}</p>
     </div>
-    {% endif %}
     {% empty %}
       <p class = "comment">No comments here yet :(</p>
   {% endfor %}

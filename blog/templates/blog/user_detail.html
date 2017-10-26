@@ -11,7 +11,7 @@
                 <div class="site-heading">
                     <h1>Checkout posts by {{username}}!</h1>
                     <hr class="small">
-                    <span class="subheading">Write blog button</span>
+                    <!-- <span class="subheading">Write blog button</span> -->
                 </div>
              </div>
           </div>
@@ -21,8 +21,9 @@
 
 <!-- Main Content -->
 
-  {% for post in posts %}
+
     <div class="container">
+      {% for post in posts %}
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
@@ -32,11 +33,13 @@
                       <h3 class="post-subtitle">
                         {{post.subtitle}}
                       </h3>
-                      <p class="post-meta">Posted by <a href="/user/{{post.author.username}}">{{post.author}}</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %}</p>
+                      <p class="post-meta">Posted by <a href="/user/{{post.author.username}}">{{post.author}}</a>{% if post.published_date %} published: {{ post.published_date }}  {% endif %} <a href="{% url 'post_detail' pk=post.pk %}">  Comments: {{ post.comments.count  }}</a></p>
                 </div>
             </div>
-            <hr>
+
         </div>
+      {% endfor %}
+      <hr>
       </div>
-  {% endfor %}
+
 {% endblock %}
