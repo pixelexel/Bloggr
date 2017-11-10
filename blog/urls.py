@@ -14,6 +14,7 @@ url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment
 url(r'^comment/(?P<pk>\d+)/approve/$', views.comment_approve, name='comment_approve'),
 url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
 url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
+url(r'^post/(?P<pk>\d+)/delete/$', views.post_delete, name='post_delete'),
 url(r'^login/$', auth_views.login, {'template_name': 'blog/login.html'}, name='login'),
 url(r'^logout/$', auth_views.logout, name='logout'),
 url(r'^signup/$', views.signup, name='signup')

@@ -28,7 +28,7 @@ def post_new(request):
             post = form.save(commit = False)
             post.author = request.user
             post.publish()
-            return redirect('post_new')
+            return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
         return render(request, 'blog/post_new.html', {'form' : form})
@@ -47,6 +47,12 @@ def post_edit(request, pk):
         else:
             form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
+
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if(request.user == post.author):
+        post.delete()
+    return user_detail(request, request.user) #instead of rendering a new view, just call the user_detail view
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('-published_date') #lte => less than or equal to

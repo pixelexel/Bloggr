@@ -25,3 +25,10 @@ In post_detail template:
 
 #TO-DO
 https://djangogirls.gitbooks.io/django-girls-tutorial-extensions/homework_create_more_models/
+
+
+Changes:
+*New post redirect ,fixed
+*markdown instructions, done
+*delete post, done
+*contact

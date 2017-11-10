@@ -3,29 +3,34 @@
 
 {% block content %}
   <!-- Header  -->
-  <header class="intro-header" style="background-image: url('{% static "img/post-bg.jpg" %}')">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <div class="page-heading">
-                      <h1>New Post!</h1>
-                      <hr class="small">
-                      <span class="subheading">What do you want to write about today?</span>
-                  </div>
-               </div>
-            </div>
-        </div>
-  </header>
+  {% if user.is_authenticated %}
+    <header class="intro-header" style="background-image: url('{% static "img/post-bg.jpg" %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>New Post!</h1>
+                        <hr class="small">
+                        <span class="subheading">What do you want to write about today?</span>
+                    </div>
+                 </div>
+              </div>
+          </div>
+    </header>
 
-  <!-- Main Content -->
-  <div class="container">
-      <!-- Post Form  -->
-      <form method="POST" class = "post-form">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" class="mui-btn mui-btn--raised mui-btn mui-btn--primary">Publish</button>
-      </form>
-      {{form.media}}
-  </div>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Post Form  -->
+        <p>Markdown is supported! To know more and find some useful tips on how to use Markdown click <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">here!</a></p>
+        <form method="POST" class = "post-form">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type="submit" class="mui-btn mui-btn--raised mui-btn mui-btn--primary">Publish</button>
+        </form>
+        {{form.media}}
+    </div>
+  {% else %}
+    <p>Please Sign in to create a new post!</p>
+  {% endif %}
 
 {% endblock %}
