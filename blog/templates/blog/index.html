@@ -7,8 +7,10 @@
 
   <!-- Header  -->
   <link href="{% static 'css/bootstrap-social.css' %}" rel="stylesheet">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="575631797778-8a2dg5s8aj5a5vqbd4vab87lvf3kfd61.apps.googleusercontent.com">
+
+  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="575631797778-8a2dg5s8aj5a5vqbd4vab87lvf3kfd61.apps.googleusercontent.com"> -->
+  
   <header class="intro-header" style="background-image: url('{% static "img/home-bg.jpg" %}')">
       <div class="container">
           <div class="row">
@@ -18,16 +20,19 @@
                       <hr class="small">
                       {% if user.is_authenticated %}
                         <span class="subheading" style = "padding : 10px" >Time to write your next post, {{user.first_name}}!</span>
+                        
                         <a class= "mui-btn mui-btn--raised mui-btn"  href = '/post/new'>New Post!</a>
                       {% else %}
                         <span class="subheading" style = "padding : 10px" >Write your First Blog here!</span>
-                        <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div>
+                        
+                        <!-- <div class="g-signin2 btn-pull center btn pull-center " onclick = location.href='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}' data-onsuccess="onSignIn"></div> -->
+
+                        <a class="mui-btn mui-btn--raised"  href = '{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}'>
+                            Sign in with Google
+                        </a>
 
                         <a class= "mui-btn mui-btn--raised mui-btn--primary"  href="/signup">Sign up</a>
 
-                        <!-- <a class="btn btn-xs btn-social btn-google " href = '{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}'>
-                            Sign in with Google
-                        </a> -->
                       {% endif %}
                       </div>
                   </div>
