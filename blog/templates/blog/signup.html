@@ -2,23 +2,25 @@
 {% load staticfiles %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <h3>Y no Google? :(</h3>
-  <h3>Already have an account? <a href="/login" style="text-decoration:underline;">Login</a></h3>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text|safe }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+  <div id = "main" style="padding-left: 30px">
+    <h2>Sign up</h2>
+    <h3>Y no Google? :(</h3>
+    <h3>Already have an account? <a href="/login" style="text-decoration:underline;">Login</a></h3>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <p>
+          {{ field.label_tag }}<br>
+          {{ field }}
+          {% if field.help_text %}
+            <small style="color: grey">{{ field.help_text|safe }}</small>
+          {% endif %}
+          {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+          {% endfor %}
+        </p>
+      {% endfor %}
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
 {% endblock %}
