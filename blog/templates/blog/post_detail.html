@@ -11,7 +11,7 @@
                     <div class="post-heading">
                         <h1>{{post.title}}</h1> 
                         {% if user == post.author %} <a class="mui-btn" href="{% url 'post_edit' pk=post.pk %}">Edit Post</a> {% endif %}
-                        {% if user == post.author %} <a class="mui-btn mui-btn--danger" href="{% url 'post_delete' pk=post.pk %}">Delete Post</a> {% endif %}
+                        {% if user == post.author or user.is_staff %} <a class="mui-btn mui-btn--danger" href="{% url 'post_delete' pk=post.pk %}">Delete Post</a> {% endif %}
                         <h2 class="subheading">{{post.subtitle}}</h2>
                         <span class="meta">Posted by <a href="/user/{{post.author.username}}">{{post.author}}</a>
                           {% if post.published_date %} published: {{ post.published_date }}  {% endif %}</span>
@@ -44,7 +44,7 @@
     <div class="comment">
         <div class="date">
             {{ comment.created_date }}
-            {% if user == post.auther or user.is_staff %}
+            {% if user == post.author or user.is_staff %}
                 <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
             {% endif %}
         </div>
