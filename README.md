@@ -1,6 +1,8 @@
 # Bloggr
 Bloggr - A Blogging platform for first time bloggers!
 
+![Screenshot](https://github.com/pixelexel/Bloggr/blob/master/Screenshot.png)
+
 [WIP]
 ## Getting Started
 
