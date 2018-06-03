@@ -1,5 +1,5 @@
 # Bloggr
-Bloggr - A Blogging platform for first time bloggers!
+Bloggr - A Blogging platform for first time bloggers! http://pixelexel.pythonanywhere.com/
 
 ![Screenshot](https://github.com/pixelexel/Bloggr/blob/master/Screenshot.png)
 
